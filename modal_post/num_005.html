@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Page title -->
+    <title page-title="">Yonseo Rigging Kit</title>
+
+    <!-- Bootstrap -->
+    <link href="../css/bootstrap.css" rel="stylesheet">
+  
+  
+        <!-- Main style sheet -->
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+	
+
+
+
+    
+
+ 
+
+
+
+
+
+
+
+<div class="container_thin">
+
+      
+<!-- <div class="container_juicebox">-->
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Notebook Lesson 5
+
+
+
+            </h3>
+
+
+          </div>
+
+          <div class="panel-body">
+          <ul>
+            <li><span class="label label-info">Yonseo Rigging Notes</span></li>
+
+            
+          </ul>
+            Projectfiles: project/lesson5/YON_lesson5.lxo 
+          
+           
+                    <p><h1>Skinning</h1>
+                    In this lesson we will cover skinning, adjusting weights, and weight painting.
+                    Skinning is the process of binding the 3D mesh to the skeleton joints created. This allows the skeleton
+                    to influence the movement of the surface vertices on our model and create animation.
+                    
+                      <div id="popcard" tabindex="0">
+                    <h3>1) Bind</h3>
+                   
+                    [Enter Setup] by clicking the setup button at the top. A yellow border will appear when setup mode is ON.
+                    Now select your skeleton and all its bones, lastly ctrl+select the model.
+                    <img class="img-responsive" src="images/bind/bind_001.jpg" style="height:px; width:900px" />
+                    Click the [bind] button on the left panel. 
+                    </div>
+                      <div id="popcard" tabindex="0">
+                          Bind type: Heat, and press ok.
+                      <img class="img-responsive" src="images/bind/heat1.png" style="height:px; width:500px" />
+                   
+                        </div>
+                        
+                         <div id="popcard" tabindex="0">
+                           A rainbow of colors should appear around your model. These colors are skin weights and they show
+                      how much effect each bone has on the surface of the model.
+                    <img class="img-responsive" src="images/bind/bind_002.jpg" style="height:px; width:900px" />
+                    </div>
+                    <div id="popcard" tabindex="0">
+                    Deselect everything and [Exit Setup]. Now test your bone rotations. Select a bone and rotate it.
+                    <img class="img-responsive" src="images/bind/bind_003.jpg" style="height:px; width:900px" />
+                    </div>
+                    
+                    <div id="popcard" tabindex="0">
+                        <img class="img-responsive" src="images/bind/arm_move.gif" style="height:px; width:600px" />
+                    If your model moves or rotates this means skin weights were applied successfully. If it didn't work,
+                    go back and check the ends of your skeleton bones and make sure they do NOT protrude outside the mesh model. 
+                    Another reason your bind will not work is if your model has an open hole somewhere or there are overlapping vertices 
+                    sharing the same polygon. </div>
+                 
+<div id="popcard" tabindex="0">
+<h3>2)Adjusting Weights</h3>
+Select your head bone and press 'e' to rotate your head backwards.
+<img class="img-responsive" src="images/bind/Screenshot_56.jpg" style="height:px; width:900px" />
+When rotating the head bone, notice how we have a distortion or a stretch of the face as seen on the left. This is a great effect
+if we want to simulate a cartoon effect. However for more realistic purposes we want to keep the face in the same form shown on the right.
+To do this we have to "adjust weights" to increase the weight amount from 0% to 100%. The closer to 100% the more weight effect it will have on the mesh.
+
+<p>Think of this as a magnet. The higher the percentage from 0 to 100, the stronger the magnetic pull force. So our head bone will act
+as a magnet and as it moves or rotates it will pull the vertices surrounding the bone.</p>
+</div>
+
+<div id="popcard" tabindex="0">
+Let's try this,
+Select your model and switch to vertices selection mode. Middle mouse lasso select the vertices you want affected by the weights. 
+<img class="img-responsive" src="images/bind/lasso.gif" style="height:px; width:600px" />
+</div>
+<div id="popcard" tabindex="0">
+Once you have selected your vertices, switch over to item mode. Select your head bone frist and lastly ctr+select the model.
+Then switch to vertices mode. You will see all your vertices selected in yellow color. Now you can activate [adjust weights] on the left panel under the weights tab.
+<img class="img-responsive" src="images/bind/adjustw.gif" style="height:px; width:600px" />
+</div>
+
+<div id="popcard" tabindex="0">
+When you click [adjust weights] many numbers will appear over your model. These numbers range from 0 to 100. 0 being the weakest and 100 being the strongest.
+
+<img class="img-responsive" src="images/bind/bind_004.jpg" style="height:px; width:900px" />
+You can left click over these numbers and drag left or right to increase and decrease the number. We want to increase all the numbers to 100% 
+so when the head turns it will follow the bone without distorting.
+</div>
+
+<div id="popcard" tabindex="0">
+When done hit the space key on your keyboard to drop the [adjust weight] tool and try to rotate your head bone again.
+
+<img class="img-responsive" src="images/bind/bhead.jpg" style="height:px; width:900px" />
+Much better deformation this time!
+</div>
+
+<div id="popcard" tabindex="0">
+<h3>3) The ALT key</h3>
+<ul>
+We can use this technique to fix other areas of our model like the neck. When the head rotates left or right the neck tends to follow in that direction
+in a twisting motion. Use the same process we learned but this time only select the vertices around the neck. When done remember to select the bone first
+then lastly ctr+select the model. Switch to vertices mode then [adjust weights] and increase
+or decrease the amount. Finally test the rotation.</ul>
+<img class="img-responsive" src="images/bind/bind_006.jpg" style="height:px; width:900px" />
+</div>
+
+<div id="popcard" tabindex="0">
+A useful feature is to select polygons or edges then press and hold down the alt key and click on vertices to convert your selection to vertices.
+When pressing the ALT key a yellow arrow will appear over the selection modes.
+<img class="img-responsive" src="images/bind/select.jpg" style="height:px; width:500px" />
+
+<img class="img-responsive" src="images/bind/bind_007.jpg" style="height:px; width:900px" />
+<hr/>
+You can also use keyframes to help when adjusting weights. Learn more about keyframes here <a href="num_009.html" class="btn btn-info btn-sm"> Lesson #9</a>
+               </div>
+               
+           
+             <div class="alert alert-success" role="alert">
+In the next lesson we will learn about controls!  <a href="num_006.html" class="btn btn-info btn-sm"> Lesson #6</a> </div>
+
+               
+             </div>
+        </div>
+        </div>
+        </div>
+
+
+
+
+
+
+
+
+</body>
+
+
+            
+
+
+
+
+
+	<!-- =============================================
+                        Footer
+        ============================================== -->
+         <div class="myfooter">
+				<footer>
+        <p><a href="https://yonseo.com" class="tran3s" target="_blank">yonseo.com</a></p>
+					<p>&copy; 2017-2018 All Rights Reserved</a></p>
+					<ul class="social-share">
+						
+						
+					</ul>
+				</footer></div>
+
+
+
+
+
+
+
+
+       </body></html>

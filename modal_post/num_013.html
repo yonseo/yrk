@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Page title-->
+    <title page-title="">Yonseo Rigging Notes</title>
+
+    <!-- Bootstrap -->
+    <link href="../css/bootstrap.css" rel="stylesheet">
+  
+    
+        <!-- Main style sheet -->
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+
+
+
+
+
+
+
+<div class="container_thin">
+
+      
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Notebook Lesson 13
+
+
+
+            </h3>
+
+
+            
+
+          </div>
+
+          <div class="panel-body">
+          <ul>
+            <li><span class="label label-info">Yonseo Rigging Kit for Modo</span></li>
+
+            
+          </ul>
+      <ul><b>Projectfiles:</b></ul> 
+      <ul>project/YON_lesson13.lxo</ul>
+     <ul>project/YON_lesson13_final.lxo</ul>
+      <hr/>
+                     <h2>Eye Controls</h2>
+                    <p>
+
+ <hr/>
+
+ 
+  <div id="popcard" tabindex="0">
+      <h4>The Eye Control</h4>
+      Let's start making the eye control. I turned off the controls and the body mesh. Now all I can see is the skeleton and eyes.
+        <img class="yimg" src="images/face/face_001.jpg" style="height:px; width:900px" />
+        </div>
+        
+          <div id="popcard" tabindex="0">
+        <ul><b>1)</b>  First let's lets turn on snapping and make sure vertex option is checked. </ul>
+        
+    <img class="yimg" src="images/face/face_002.jpg" style="height:px; width:400px" />
+        </div>
+           
+             <div id="popcard" tabindex="0">
+           Activate the skeleton tool and starting from the back of the eyeball I will create a bone by clicking on the center. Then I will rotate my view to the front of the eyeball
+           and click on the center. This will create a bone in the center of the eyeball.
+           
+           Rename your bone joints to 'eye_L_front' and 'eye_L_back'.
+        <img class="yimg" src="images/face/face_003.jpg" style="height:px; width:800px" />
+         </div>
+         
+                    <div id="popcard" tabindex="0">
+         Press 'L' on your keyboard to create a locator and change your [Drop Action: Position]. Perform a drop action on the eye bone to quickly position it on the eye.
+         Enter your right view and move it to the center. With snapping [vertex] enabled it will snap to the center vertex. Rename this to 'effector_L_eye' and change its shape to a rhombus.
+                                                       <img class="yimg" src="images/face/face_004.jpg" style="height:px; width:900px" />
+                                                    Create another Locator and [Drop Action: [Position] to 'bone_L_eye_front'. This is a temporary locator we will delete later but for now we will hold on to it so I can use it
+                                                    on the right side of the eye.
+                                                    
+                                                    Finally select your eye bone and [Drop Action: Match] perform a drop action to 'effector_L_eye'.
+                                                     </div>
+                                                    
+                                                    <div id="popcard" tabindex="0">
+                                                       <img class="yimg" src="images/face/face_005.jpg" style="height:px; width:900px" />
+                                                    This will move our eye bone to the center of the eye and move the 'eye_L_front' joint outside of our eyeball mesh.
+                                                    With the temporary locator in our scene we can perform a drop action and fix this problem.
+                                                       <img class="yimg" src="images/face/face_006.jpg" style="height:px; width:900px" />
+                                                                     [Enter Setup] select the eye bone and ctrl+select the 'effector_L_eye'. Add modifier [Rotation]. Exit Setup and test rotation of 'effector_L_eye'.
+                                                       </div>
+                                                       
+                                                        <div id="popcard" tabindex="0">
+                                                       
+                                                       <img class="yimg" src="images/face/face_007.jpg" style="height:px; width:500px" />
+                                                       Create a new locator and name this 'loc_eye_center'. [Drop Action: Position] perform a drop action to 'effector_L_eye'. 
+                                                       Under transformations change Position X to 0. I want this locator to be at the center of both eyes.
+                                                         <img class="yimg" src="images/face/face_008.jpg" style="height:px; width:900px" />
+                                                         </div>
+                                                         
+                                                         
+                                                       <div id="popcard" tabindex="0">
+                                                       [Enter Setup] and select 'effector_L_eye' then ctrl+select 'loc_eye_center'. Assign a modifier [Rotation]. 
+                                                       Parent 'effector_L_eye' to 'loc_eye_center'. Select all the eye objects created in this lesson and [Zero > All].
+                                                       [Exit Setup] and test rotation of 'loc_eye_center'.
+                                                       
+                                                       <img class="yimg" src="images/face/face_009.jpg" style="height:px; width:600px" />
+                                                       The bone follows the 'loc_eye_main' which is fine but the 'effector_L_eye' does not stay in place.
+                                                         </div>
+                                                       
+                                                            <div id="popcard" tabindex="0">
+                                                       Let's fix this by selecting 'effector_L_eye' and ctrl+selecting 'bone_L_eye_back' and parent to the bone.
+                                                       
+                                                       <img class="yimg" src="images/face/face_010.jpg" style="height:px; width:600px" />
+                                                       
+                                                       Now our 'effector_L_eye' stays in place and the eye bone follows when we rotate 'loc_eye_center'. 
+                                                         </div>
+                                                       
+                                                       <div id="popcard" tabindex="0">
+                                                       We haven't added a controller for the eye control so lets do that.
+                                                       
+                                                       <img class="yimg" src="images/face/face_011.jpg" style="height:px; width:600px" />
+                                                           Create a locator and change its shape to a circle. Rename it to 'controller_eyes'. Perform a [Drop Action: Position] to 'loc_eye_center'.
+                                                       Then move the circle foward.</div>
+                                                       
+                                                          <div id="popcard" tabindex="0">
+                                                       <ul><b>2)</b> [Enter Setup] then select the 'loc_eye_center' and ctrl+select 'controller_eyes'. Add a modifier [Direction]. </ul>
+                                                       
+                                                       [Exit Setup] and test the rotation of 'controller_eyes'.
+                                                       
+                                                       
+                                                      
+                                                            <img class="yimg" src="images/face/face_012.jpg" style="height:px; width:600px" /></div>
+                                                            
+                                                             <div id="popcard" tabindex="0">
+                                                        <h4>3)</h4> Last Steps.
+                                                        
+                                                        
+                                                       <ul> <b>1)</b> [Enter Setup]
+                                                       Select the eye bone and parent to the head bone.</ul>
+                                                       
+                                                       <ul> <b>2)</b>
+                                                       Enable the controls group to make them visible.
+                                                       Perent the 'loc_eye_center' to 'controller_goal_head'.
+                                                       Parent the 'controller_eyes' to 'controller_goal_head'.</ul>
+                                                       
+                                                        <ul><b>3)</b>Bind the eyeball to the eye bone. Use [Heat].</ul>
+                                                       
+                                                       
+                                                        <img class="yimg" src="images/face/feyes.gif" style="height:px; width:600px" /></div>
+                                                       
+                                                    <div class="alert alert-success" role="alert">
+                                                    In the next lesson I will cover problem solving.
+                                                    </div>
+                                                    
+                                                                       
+                                                           <center>
+<div class="container-fluid">
+    <div class="row">
+        
+      
+        <div class="col-md-4">      <a href="num_012.html" class="btn btn-info btn-sm"> Lesson #12</a></div>
+         <div class="col-md-4"> <a href="../index.html" class="btn btn-info btn-sm"> home</a>  </div>
+          <div class="col-md-4">   <a href="num_014.html" class="btn btn-info btn-sm"> Lesson #14</a> </div>
+
+
+     </div>              
+                
+    
+    
+    </center>
+                                                    
+                                                    
+                                                    </div>
+                                                    
+                </div>
+        </div>
+        </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+</body>
+
+
+            
+
+
+
+
+
+	<!-- =============================================
+                        Footer
+        ============================================== -->
+         <div class="myfooter">
+			<footer>
+        <p><a href="https://yonseo.com" class="tran3s" target="_blank">yonseo.com</a></p>
+					<p>&copy; 2017-2018 All Rights Reserved</a></p>
+					<ul class="social-share">
+						
+						
+					</ul>
+				</footer></div>
+
+
+
+
+
+
+
+       </body></html>

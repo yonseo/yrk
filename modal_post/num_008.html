@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Page title -->
+    <title page-title="">Yonseo Rigging Kit</title>
+
+    <!-- Bootstrap -->
+    <link href="../css/bootstrap.css" rel="stylesheet">
+  
+
+        <!-- Main style sheet -->
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+		
+
+
+    
+
+
+
+
+<div class="container_thin">
+
+      
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Notebook Lesson 8
+
+
+
+            </h3>
+
+
+
+          </div>
+
+          <div class="panel-body">
+          <ul>
+            <li><span class="label label-info">Yonseo Rigging Notes</span></li>
+
+
+<li><h4>Project files:</h4> project/YON_lesson8.lxo</li>
+   project/YON_lesson8final.lxo
+
+<hr/>
+            
+          </ul>
+                     <h1>Modifiers</h1>
+                     
+                     Modifiers can be a little tricky at first but we become familiar with them as we use them.
+                     
+                     To understand how we use modifiers in our rig lets look at how these objects talk to eachother.
+                     
+                     <center>
+                     <p>
+                     <b>In previous lessons we covered:</b>
+                     <li>Drop Action</li>
+                     <li>Controls</li>
+                     <li>Parenting</li></p></center>
+                     
+                     <b>You must become familiar with these before continueing this lesson.</b>
+                     <hr/>
+                     
+                     <div id="popcard" tabindex="0">
+                     <p><h3>1) Now let's jump in...</h3></p>
+                     In this example I've created 3 objects, a circle locator, a locator, and a skeleton bone.
+                     
+                     <li><b>Circle Locator:</b>[named: <b>control</b>] a simple locator with a changed shape to a circle.</li>
+                     <li><b>Locator:</b>[named: <b>Locator</b>] a default locator</li>
+                     <li><b>Skeleton Bone:</b>[named: <b>Skeleton_root</b>] a default skeleton bone with 2 joints</li>
+                     
+                     <p><img class="img-responsive" src="images/deformations/obj_sample.jpg" style="height:px; width:800px"/></p>
+                     
+                     The circle 'control' will control the 'Locator'. The 'Locator' will control one joint out of the
+                     two joints connected to the bone. The bone controls the skin weights around the character which in turn make the character move.
+                     
+                     <p></div>
+                     
+                     <div id="popcard" tabindex="0">
+                        <h4>If we compare this to a car,</h4> 
+                        <li> the circle 'control' is used to animate the character and make it easier on the animator to work. This is like the steering wheel on a car.
+                     </li>
+                     <li>
+                     The circle 'control' talks to the 'locator' when it wants to animate. The 'Locator' is like the shocks or 'springs' in a car. Without modifiers it will do nothing.
+                     </li>
+                     
+                     <li>The bone is the one that creates the motion or movement. This is like the cars wheel when it rotates or turns left and right.</li>
+                     <p>
+                     <h4>Where are the Modifiers?</h4>
+                     <li>The 'Locator' has modifiers applied connecting the bone and locator. This is why I name these 'effectors'. It creates an effect of squash and stretch, direction, translation, and rotation.
+                     The effect is similar to a cartoon animation effect. 
+                     This is where the magic happens! </li></p>
+                     
+                     <h4>Naming conventions for these</h4>
+                     
+                     I prefer to use the naming convention 'loc' for locators that have a default appearance, 'effector' for locators that have a modifier, and
+                     'control' for locators that are used as controls. You can use any naming convention to make it easier to organize your hierachy. 
+                     
+                     
+                     </p> </div>
+                      <div id="popcard" tabindex="0">
+                        <p><h3>2) Lets begin...</h3></p>
+                        In my scene I have created 2 locators. A control and an effector. The control will have a circle shape. The effector will keep default.
+                    <p><img class="img-responsive" src="images/mod/m001.jpg" style="height:px; width:900px"/>
+                    </div>
+                    
+                     <div id="popcard" tabindex="0">
+                    To get this setup properly I need a locator where my 'skeleton_root' is at. I start with a [drop action: match] and drop my locator over 'skeleton_root'.
+                    <img class="img-responsive" src="images/mod/moddrop.gif" style="height:px; width:900px"/>
+                    </div>
+                    
+                    <div id="popcard" tabindex="0">
+                    I will do the same with my controller named 'controller_pelvis' only this time im using a [drop action: match position].
+                    
+                    <img class="img-responsive" src="images/mod/moddrop2.gif" style="height:px; width:900px"/>
+                    Now we can apply modifiers!</div>
+                    
+                         <div id="popcard" tabindex="0">
+                          <h3>3) Aplying Modifiers</h3>
+                          <img class="img-responsive" src="images/deformations/(19).jpg" style="height:px; width:600px"/>
+                         [Enter Setup]
+                         <li>First select the 'bone_pelvis' bone and lastly ctr+select the locator named 'effector_pelvis'. At the modifiers tab under constraints click on <b>Position.</b></li>
+                         <li>Repeat: select the bone 'bone_pelvis' and lastly ctr+select the locator named 'effector_pelvis'. At the modifiers tab under constraints click on <b>Rotation.</b></li>
+                           
+                            
+                            
+                            <img class="img-responsive" src="images/mod/m003.jpg" style="height:px; width:900px"/>
+                             </div>
+                            
+                              <div id="popcard" tabindex="0">
+                            <h3>4) Test the effector</h3>
+                            [Exit Setup] Select the locator named 'effector_pelvis', NOT the control. Then move or rotate to test. If move and rotate work then modifiers have been
+                            applied successfully.
+                       
+                          <img class="img-responsive" src="images/mod/m005.jpg" style="height:px; width:900px"/>
+                       </div>
+                       
+                           <div id="popcard" tabindex="0">
+                         <h3>5)  Parenting the Control</h3>
+                         
+                         Before we parent we must enter [Setup]. Parent by first selecting 'effector_pelvis' and lastly ctrl+selecting 'controller_pelvis'. Then press 'P' on the keyborard.
+                                <img class="img-responsive" src="images/mod/m004.jpg" style="height:px; width:600px"/>
+                             You will see a '+' symbol next to 'bone_pelvis'. You can click on it and see the modifiers we just applied.
+                         </div>
+                    
+                    <div id="popcard" tabindex="0">
+               <h3>6)  Test the Control</h3>
+                         Exit [Setup] and test rotation and movement of 'controller_pelvis'.
+                    <img class="img-responsive" src="images/mod/m006.jpg" style="height:px; width:900px"/>
+                    
+                    
+                    Repeat these steps to create the other controls for the spine and apply modifiers. There are 4 circle controls in total starting at the pelvis joint
+                    (the one we just made) and ending at the chest joint. 
+                    </div>
+                    
+                      <div id="popcard" tabindex="0">
+                    <h3>7)  The final Scene</h3>
+                    
+                      <img class="img-responsive" src="images/mod/m007.jpg" style="height:px; width:600px"/>
+                    To finish this lesson add the newly created 'controller_pelvis' to the group Controls under the groups tab.
+                    Add the 'effector_pelvis' to the 'hidden' group under the groups tab. Rememeber to add any new bone, item, locator, controller to
+                    a group to keep things organized.</div>
+                   <img class="img-responsive" src="images/mod/m008.jpg" style="height:px; width:600px"/>
+                   The final scene with all spine controls is named 'YON_lesson8final.lxo'
+                   
+                   
+    <p> </p><hr/>
+                    <div class="alert alert-success" role="alert">
+                       In the next lesson we will look at working with keyframes in animation. </div>
+                       
+                         <center>
+<div class="container-fluid">
+    <div class="row">
+        
+      
+        <div class="col-md-4">      <a href="num_007.html" class="btn btn-info btn-sm"> Lesson #7</a></div>
+         <div class="col-md-4"> <a href="../index.html" class="btn btn-info btn-sm"> home</a>  </div>
+          <div class="col-md-4">   <a href="num_009.html" class="btn btn-info btn-sm"> Lesson #9</a> </div>
+
+</div>
+     </div>              
+                
+    
+    
+    </center>
+   
+    
+                                                    </p>
+                </div>
+        </div>
+        </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+
+            
+
+
+
+
+
+	<!-- =============================================
+                            Footer
+        ============================================== -->
+         <div class="myfooter">
+				<footer>
+        <p><a href="https://yonseo.com" class="tran3s" target="_blank">yonseo.com</a></p>
+					<p>&copy; 2017-2018 All Rights Reserved</a></p>
+					<ul class="social-share">
+						
+						
+					</ul>
+				</footer>
+</div>
+
+
+
+
+
+
+       </body></html>

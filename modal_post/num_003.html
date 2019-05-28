@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Page title -->
+    <title page-title="">Yonseo Rigging Kit</title>
+
+    <!-- Bootstrap -->
+    <link href="../css/bootstrap.css" rel="stylesheet">
+ 
+        <!-- Main style sheet -->
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+	
+
+    
+
+ 
+
+
+
+
+
+
+
+<div class="container_thin">
+
+      
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Notebook Lesson 3
+
+
+
+            </h3>
+
+
+
+          </div>
+
+          <div class="panel-body">
+          <ul>
+            <li><span class="label label-info">Yonseo Rigging Kit for Modo</span></li>
+
+            
+          </ul>
+            
+              Projectfiles: project/lesson3/YON_lesson3.lxo 
+                                                     
+                    
+    <h3>#3 Making the Skeleton Spine</h3>
+  <p>Hotkeys: 
+  <li>ctrl + / view wireframe</li>
+  <li>\/ hide wireframe</li>
+  
+  </p>
+  <hr/>
+  
+   <div id="popcard" tabindex="0">
+   <div class="alert alert-info" role="alert">
+       <h4><b>Tip:</b></h4>
+       <hr/>
+  <strong>What are naming conventions?</strong>
+  Naming conventions allows us to organize our items or objects. For example, in this lesson
+  we will be using the naming convention "bone" followed by the letter "L" or "R". Each word is spaced with underscores '_'.
+  Here are some examples of naming conventions:
+  <h5>bone_L</h5>
+  This tell us that this object is a bone in our model. "L" is for left and "R" for right. In this case our object is a bone and our model
+  is our character. By binding the bone to our model we can animate or move our character.
+  
+  We will add more naming convetions as we create more bones. You can make and use your own naming conventions.
+  
+  </div></div>
+  
+  <hr/>
+  
+   <div id="popcard" tabindex="0">
+  <h3>1) Making the Spine Bones</h3>
+<p>Jump over to the setup tab. Press F11 to open the snapping popover. Press 'x' to enable snapping or click on the snapping button. Make sure Grid is selected.</p><br />
+	<img class="img-responsive" src="images/spine/sp_001.jpg" style="height:px; width:900px" /><br /></div>
+         <div id="popcard" tabindex="0">
+	Select Skeleton and create four bones for the torso starting at the pelvis and ending at the clavicle. 
+        Create 2 more bones, one for the neck and last one for the head. Now you should have 6 bones
+        The bones will snap into place based
+        on the grid squares because we have enabled snapping. Its a quick and easy process.<br />
+        
+	<img class="img-responsive" src="images/spine/sp_002.jpg" style="height:px; width:900px" /><br /><br />
+        the center view or pressing '7' will allow you to move each bone center without affecting the rest of
+        the bones.
+        </div>
+        
+        
+        <div id="popcard" tabindex="0">
+        <h3>2) Renaming Joints</h3>
+       	<img class="img-responsive" src="images/spine/sp_003.jpg" style="height:px; width:900px" /><br />
+         Notice that we have 7 joints in our right view but on
+        our model we have 6 bones. The joints displayed are the connecting pieces of the bones, so we have 7 joints in total and
+        6 bones in our 3D view. The last joint in the hierachy will always be named 'end_' followed by the name of the joint.
+        This is because the end joint of any skeleton has no effect on the model and will most likely not be used to animate.
+        If you think of the ends of your fingers in the real world, they don't rotate or move on their own, it is the joint that comes before the end that
+        will move or rotate that end. 
+        </div>
+        
+        <div id="popcard" tabindex="0">
+        <h5>skeleton_root</h5> will be the start of our skeleton. Every bone will go below this in the hierachy.
+        <p>Starting from the root rename each joint as shown below. Anything named "end_" is the end part of our skeleton. </p>
+	<img class="yimg" src="images/spine/sp_004.jpg" style="height:px; width:600px" />
+        </div>
+        
+        <div id="popcard" tabindex="0">
+  <h3>3) Making the Leg bones.</h3>
+  <img class="img-responsive" src="images/spine/sp_005.jpg" style="height:px; width:700px" />
+  Make sure your joints rotation is pointing towards the left. When creating a bone there is a small blue square that appears, you can select that and position the joint.
+  <img class="img-responsive" src="images/spine/sp_006.jpg" style="height:px; width:300px" />
+  </div>
+  
+    <div id="popcard" tabindex="0">
+    <img class="img-responsive" src="images/Screenshot_14.jpg" style="height:px; width:700px" />
+    Another way to do this,
+    first select your bone in "item" mode. Then click "center" mode. Select your joint. It will
+    turn yellow at the center when it has been selected. Now you can rotate or translate the joint without
+    affecting the other joints.
+      <img class="img-responsive" src="images/Screenshot_15.jpg" style="height:px; width:700px" />
+      </div>
+      
+      <div id="popcard" tabindex="0">
+          
+       <div class="alert alert-info" role="alert">
+      <ul><h3>Tip:</h3></ul>
+      <hr/>
+        We can also align and position our joints with a drop action. 
+        <ul>Learn more about drop actions here 
+        <a href="num_007.html" class="btn btn-info btn-sm"> Lesson #7</a></ul>
+        </div> </div>
+        
+        
+          
+  
+   <div id="popcard" tabindex="0">
+  Now making sure our selection is set to 'items'. Go to drop action, and select 'match position'.
+     <img class="img-responsive" src="images/spine/mdrop.jpg" style="height:px; width:130px" />
+  This option will match the center position of our leg bones to the torso positon when we perform a drop action.</div>
+ 
+ <div id="popcard" tabindex="0">
+  Simply click and drag the top of the Leg chain
+  in the 'items' window and drop it over the lower torso bone. Now our leg bone has a matching position of our pelvis bone.
+  <img class="img-responsive" src="images/spine/sp_007.jpg" style="height:px; width:900px" />
+  From here I can move the leg bone to the right and now it is aligned with the spine bone.</div>
+  
+   <div id="popcard" tabindex="0">
+    <img class="img-responsive" src="images/spine/sp_008.jpg" style="height:px; width:900px" />
+    Rename the leg bones using the name convention '_L_' for the left leg. 
+    </div>
+ 
+  <hr/>
+          <div class="alert alert-success" role="alert">
+  <p> In the next lesson we will cover mirroring x.
+                                                    </p></div>
+                                                    
+                                                    
+                                                    
+                                                    
+                                                                           
+                                                           <center>
+<div class="container-fluid">
+    <div class="row">
+        
+      
+        <div class="col-md-4">      <a href="num_002.html" class="btn btn-info btn-sm"> Lesson #2</a></div>
+         <div class="col-md-4"> <a href="../index.html" class="btn btn-info btn-sm"> home</a>  </div>
+          <div class="col-md-4">   <a href="num_004.html" class="btn btn-info btn-sm"> Lesson #4</a> </div>
+
+</div>
+     </div>              
+                
+    
+    
+    </center>
+                                                    
+                                                    
+                                                    
+                                                    
+                 </div>
+        </div>
+        </div>
+        </div>
+
+
+
+
+
+
+
+
+</body>
+
+
+         
+
+
+
+
+
+	<!-- =============================================
+                        Footer
+	============================================== -->
+         <div class="myfooter">
+				<footer>
+        <p><a href="https://yonseo.com" class="tran3s" target="_blank">yonseo.com</a></p>
+					<p>&copy; 2017-2018 All Rights Reserved</a></p>
+					<ul class="social-share">
+						
+						
+					</ul>
+				</footer></div>
+
+
+
+
+
+
+
+
+
+       </body></html>

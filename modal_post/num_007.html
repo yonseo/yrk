@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Page title set  -->
+    <title page-title="">Yonseo Rigging Kit</title>
+
+    <!-- Bootstrap -->
+    <link href="../css/bootstrap.css" rel="stylesheet">
+  
+        <!-- Main style sheet -->
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+	
+
+    
+
+ 
+
+
+
+<div class="container_thin">
+
+      
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Notebook Lesson 7
+
+
+
+            </h3>
+
+
+              
+
+
+          </div>
+
+          <div class="panel-body">
+          <ul>
+            <li><span class="label label-info">Yonseo Rigging Kit for Modo</span></li>
+
+            
+          </ul>
+          <b>
+          Project Files:</b> project/YON_lesson7.lxo
+        
+          
+          <hr/>
+     
+                     <h3>Performing a drop action!-</h3>
+                     <hr/>
+                    <center><b>In the previous lesson we covered:</b>
+                    <li>Controls</li> 
+                    
+                                    <ul><b>You must become familiar with these before continueing this lesson.</b></ul>
+                    </center>
+    
+                     <hr/>
+                    <p>
+                         <div id="popcard" tabindex="0">
+                    <img class="img-responsive" src="images/drop/d001.jpg" style="height:px; width:900px"/>
+                    I have a created a rhombus locator and I want to use this to control the entire skeleton. To do this we need to perform a drop action
+                    and parent the control to our 'skeleton_root' bone.
+            </div>
+                     <div id="popcard" tabindex="0">
+                    <ul>Step 1) 
+                    
+                    Let's name our control 'controller_skeleton_diamond'
+                    Now we have to select the drop action we want to use. We will use match position. This will
+                    match the position of another object when we perform a drop action.</ul>
+                    <img class="img-responsive" src="images/drop/d002.jpg" style="height:px; width:800px"/>
+                      </div>
+                    
+                    <div id="popcard" tabindex="0">
+                    Step 2) To perform a drop action all we have to do is simply select the object in our right view panel then
+                    drag and drop that onto the 3D viewport over a bone joint to get the matching position.
+                    <img class="img-responsive" src="images/drop/dropaction.gif" style="height:px; width:800px"/>
+                      </div>
+                      
+                    <div id="popcard" tabindex="0">
+                Our locator named 'controller_skeleton_diamond' is now at the position of the 'skeleton_root'.
+                Lets offset the rhombus shape so that we are able to select it away from the skeleton.
+                
+                 <img class="img-responsive" src="images/drop/offset.gif" style="height:px; width:800px"/>
+                 By offsetting the rhombus we can select it to rotate or move our skeleton and the center will stay at the 'skeleton_root'.
+                   </div>
+                 
+                 <div id="popcard" tabindex="0"><ul>
+                Step 3) [Enter Setup] 
+                 Finally by selecting my 'skeleton_root' and lastly ctr+selecting my joint 'controller_skeleton_diamond' I can
+                 parent by pressing 'P' on my keyboard.</ul> 
+                    <img class="img-responsive" src="images/drop/d006.jpg" style="height:px; width:600px"/>
+                    The 'base_global' is a parent to 'controller_skeleton_diamond'. The 'controller_skeleton_diamond' is
+                   a parent to 'skeleton_root'.
+                 </div>
+                                
+                                 <div id="popcard" tabindex="0"><ul>
+                                 <img class="img-responsive" src="images/drop/dmove.gif" style="height:px; width:700px"/>
+                     Step 4) [Exit Setup] and test your rotation or movement on the 'controller_skeleton_diamond'.
+                 The entire skeleton should follow and rotate at the center. This is our skeleton control. Our base control is at the bottom in
+                 a square shape. Notice when we rotate 'controller_skeleton_diamond' the base control at the bottom doesn't move from its position.
+                </div>
+ 
+                       <div class="alert alert-success" role="alert">
+                           In the next lesson we will cover using modifiers.
+                           </div>
+                   
+                   <hr/>
+  <center>
+<div class="container-fluid">
+    <div class="row">
+        
+      
+        <div class="col-md-4">      <a href="num_006.html" class="btn btn-info btn-sm"> Lesson #6</a></div>
+         <div class="col-md-4"> <a href="../index.html" class="btn btn-info btn-sm"> home</a>  </div>
+          <div class="col-md-4">   <a href="num_008.html" class="btn btn-info btn-sm"> Lesson #8</a> </div>
+
+</div>
+     </div>              
+                
+    
+    
+    </center>
+                   
+                   
+                    </div>
+                    
+        
+                                                    </p>
+                  </div>
+        </div>
+        </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+
+            
+
+
+
+
+
+	<!-- =============================================
+                            Footer
+        ============================================== -->
+         <div class="myfooter">
+				<footer>
+        <p><a href="https://yonseo.com" class="tran3s" target="_blank">yonseo.com</a></p>
+					<p>&copy; 2017-2018 All Rights Reserved</a></p>
+					<ul class="social-share">
+						
+						
+					</ul>
+				</footer></div>
+
+
+
+
+
+
+
+
+
+       </body></html>

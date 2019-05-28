@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Page title -->
+    <title page-title="">Yonseo Rigging Kit</title>
+
+    <!-- Bootstrap -->
+    <link href="../css/bootstrap.css" rel="stylesheet">
+  
+        <!-- Main style sheet -->
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/animations.css">
+
+     
+
+
+
+
+   
+
+
+<div class="container_thin">
+
+     
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Notebook Lesson 2
+
+ 
+            </h3>
+
+ </div>
+ 
+ 
+ 
+   
+     
+     
+     
+
+          <div class="panel-body">
+          <ul>
+            <li><span class="label label-info">Yonseo Rigging Kit for Modo</span></li>
+
+            
+          </ul>
+          
+           Projectfiles: project/lesson2/YON_lesson2.lxo 
+           
+                                                        
+                     <h2>Basics of Bones</h2>
+                   <hr/>
+                   <h3>1) Making the Arm.</h3>
+                   
+                  
+                      
+<div id="popcard" tabindex="0">
+    
+ 
+    <img class="yimg" src="images/arm/_0017_Background.jpg" style="height:px; width:900px" />
+     Lets jump over to the Setup Tab. Change your view to the front view and click on the skeleton button to create a bone.
+     
+    </div>
+    
+    
+    <div id="popcard" tabindex="0">
+  
+     <img class="yimg" src="images/arm/_0016_Screenshot_31.jpg" style="height:px; width:900px" />
+       In the tools properties you can change to edit the bone, insert, add or delete. Were going to insert a bone.
+       </div>
+    
+    <div id="popcard" tabindex="0">
+     Click on shoulder joint to activate the insert. This will insert a joint to the center of our skeleton arm. 
+     
+      <img class="yimg" src="images/arm/_0015_Screenshot_32.jpg" style="height:px; width:900px" />
+       </div>
+      
+      <div id="popcard" tabindex="0">
+      Now we
+     can reposition our joints. Before we can do this we have to switch over to 'edit' in the tools properties.
+      Switch over to 'edit' mode to move each individual joint.
+      
+     
+       <img class="yimg" src="images/arm/_0014_Screenshot_33.jpg" style="height:px; width:900px" />
+      </div>
+      
+      
+      <div id="popcard" tabindex="0">
+      <div class="alert alert-info" role="alert">
+        <h5>Tip:</h5>
+        <hr>
+      If you drop the skeleton tool you can no longer use 'add', 'edit', 'insert', 'delete'  to move a joint. You must activate the 'skeleton' tool to use these options.
+       <img class="yimg" src="images/arm/sk.jpg" style="height:px; width:300px" />
+       We will cover more about moving and positioning joints in <a href="num_003.html" class="btn btn-info btn-sm"> Lesson #3</a>
+       </div> </div>
+       
+       <div id="popcard" tabindex="0">
+       Drop the skeleton tool by pressing space key. Now lets rename our joints. On the right panel rename
+       the skeleton arm to 'shoulder_L' , 'elbow_L' and 'wrist_L'. This will let us know the bones name and side. We want to stay organized since we will create more bones.
+      
+         <img class="yimg" src="images/arm/shoulder_bones.jpg" style="height:px; width:300px" />
+          </div>
+          <hr/>
+          
+          <div id="popcard" tabindex="0">
+          <h3>2) Finger Skeleton</h3>
+          Now make a finger skeleton placing each joint where the finger bends. It is easier to do this in the top view.
+          You can switch over to perspective and check that your bones are inside the mesh. You don't want any joint
+          to stick out from the mesh, this can create problems when we try to bind our model.
+         <img class="yimg" src="images/arm/_0012_Screenshot_35.jpg" style="height:px; width:900px" />
+             I've created a finger skeleton and renamed the joints with "finger_L_a" with the last letter in alphabetical order. 
+              </div>
+             
+              <div id="popcard" tabindex="0">
+          <img class="yimg" src="images/arm/_0011_Screenshot_36.jpg" style="height:px; width:900px" />
+          In the top view I will duplicate the finger skeleton to make the other fingers. You can do this by selecting the bone and pressing "ctrl + d" 
+          on the keyboard. 
+             </div>
+         
+          <div id="popcard" tabindex="0">
+           <img class="yimg" src="images/arm/_0010_Screenshot_37.jpg" style="height:px; width:900px" />
+           When rotating or moving the skeleton it will affect all child bones. To move each joint individually simply select the desired
+           joint and click on "centers" mode at the top. Then select the joint once more, it will turn yellow.  Now you can rotate or move this joint
+           without affecting the rest.
+           </div>
+           
+            <div id="popcard" tabindex="0">
+            <img class="yimg" src="images/arm/_0009_Screenshot_38.jpg" style="height:px; width:900px" />
+            When positioning the thumb make sure to rotate the finger skeleton to follow the thumbs angle.
+              </div>
+            
+            <div id="popcard" tabindex="0">
+            
+             <img class="yimg" src="images/arm/_0008_Screenshot_39.jpg" style="height:px; width:900px" />
+             Now we can rename all finger joints to Thumb, index, middle, ring, pinky.
+             <img class="yimg" src="images/arm/_0007_Screenshot_40.jpg" style="height:px; width:900px" />
+               </div>
+             
+             
+                <div id="popcard" tabindex="0">
+             <h3>3) Parenting</h3>
+             We need to parent the fingers to the wrist, to do this select all fingers at the root. Now "ctrl + select" the wrist joint and press 'p'.
+             This will parent the fingers to the wrist. The last joint selected will be the parent. 
+             <div class="alert alert-info" role="alert">
+               <h5>Tip:</h5>
+               <hr>
+             Another way to parent is by draging and dropping our
+             selected bones in our hierachy on top of our parent bone.  You can UNparent a bone by pressing 'shift + P'.
+          </div>
+        <img class="yimg" src="images/arm/_0005_Screenshot_42.jpg" style="height:px; width:900px" />
+               </div>
+             
+             <div id="popcard" tabindex="0">
+             If we hide our model we can see our skeleton. Notice how the lines are connected to the finger bones. There will be one
+             line that appears as a bone. This is fine.
+             <img class="yimg" src="images/arm/_0004_Screenshot_43.jpg" style="height:px; width:900px" />
+              </div>
+             
+             <div id="popcard" tabindex="0">
+             <h3>4) Clavicle</h3>
+             Let's create a clavicle. Rename the inside joint of the claivcle to 'clavicle_L_in' and the outside joint of the clavicle to 'clavicle_L_out'.
+             <img class="yimg" src="images/arm/_0003_Screenshot_44.jpg" style="height:px; width:900px" />
+              </div>
+             
+              <div id="popcard" tabindex="0">
+             Again we select our shoulder joint first then ctr+select our clavicle bone 'clavicle_L_out' and parent by pressing 'p'.
+             <img class="yimg" src="images/arm/_0001_Screenshot_46.jpg" style="height:px; width:900px" />
+              </div>
+             
+              <div id="popcard" tabindex="0">
+             Hide your model to see the skeleton or click the eye icon under your model group.
+             <img class="yimg" src="images/arm/_0000_Screenshot_47.jpg" style="height:px; width:900px" />
+              </div>
+             
+              <div id="popcard" tabindex="0">
+             Our final arm skeleton. Your hierachy should look similar to this. You can use any naming convention to stay organized.
+               <img class="yimg" src="images/arm/Screenshot_48.jpg" style="height:px; width:900px" />
+                </div>
+               <div class="alert alert-success" role="alert">
+                  <center>You have now created your first arm skeleton!
+                  In the next lesson we will create the spine and legs. Afterwards we will mirror to create the right side of the skeleton.
+                  </center>     </div></p>
+
+
+
+<hr/>
+  <center>
+<div class="container-fluid">
+    <div class="row">
+        
+      
+        <div class="col-md-4">      <a href="num_001.html" class="btn btn-info btn-sm"> Lesson #1</a></div>
+         <div class="col-md-4"> <a href="../index.html" class="btn btn-info btn-sm"> home</a>  </div>
+          <div class="col-md-4">   <a href="num_003.html" class="btn btn-info btn-sm"> Lesson #3</a> </div>
+
+</div>
+     </div>              
+                
+    
+    
+    </center>
+    
+    
+
+    
+    
+  
+    
+ 
+
+                       
+        </div>
+        </div>
+        </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+
+            
+
+
+
+
+
+	<!-- =============================================
+                            Footer
+	============================================== -->
+         <div class="myfooter">
+				<footer>
+        <p><a href="https://yonseo.com" class="tran3s" target="_blank">yonseo.com</a></p>
+					<p>&copy; 2017-2018 All Rights Reserved</a></p>
+					<ul class="social-share">
+						
+						
+					</ul>
+				</footer></div>
+
+
+
+
+
+
+
+
+
+       </body></html>

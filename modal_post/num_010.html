@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Page title -->
+    <title page-title="">Yonseo Rigging Notes</title>
+
+    <!-- Bootstrap -->
+    <link href="../css/bootstrap.css" rel="stylesheet">
+  
+        <!-- Main style sheet -->
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+	
+
+
+    
+
+
+
+
+<div class="container_thin">
+
+      
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Notebook Lesson 10
+
+
+
+            </h3>
+
+
+           
+
+
+
+          </div>
+
+          <div class="panel-body">
+          <ul>
+            <li><span class="label label-info">Yonseo Rigging Kit for Modo</span></li>
+
+            
+          </ul>
+          <div id="popcard" tabindex="0">
+          
+                     <h3>Problemsolving</h3>
+                     <h4>What is going on?!</h4> Sometimes these common problems happen when rigging. There can be a few different outcomes
+                     but when your rig is misbehaving it is most likely your transformations. 
+                    <p><img class="img-responsive" src="images/problemsolve/001.jpg" style="height:px; width:800px"/>
+                      </div>
+                     <div id="popcard" tabindex="0">
+                   <h3>1) Zero Transformations</h3> 
+                   To solve this error we simply have to [Enter Setup]. 
+                   <img class="img-responsive" src="images/problemsolve/(19).jpg" style="height:px; width:500px"/> </div>
+                   
+                    <div id="popcard" tabindex="0">
+                   Select our skeleton or all our bones. Go to our properties and
+                   select [Zero > All].
+                   <img class="img-responsive" src="images/problemsolve/zeroall2.jpg" style="height:px; width:400px"/>
+                   Now [Exit Setup] and your rig should be back in place. </div>
+                   <p>
+                            
+                               <div id="popcard" tabindex="0">
+                                   <div class="alert alert-info" role="alert">
+                            <h4>Tip:</h4>
+                            <p>
+                            <ul>
+                               If you are having the same problem while [Setup] is ON and your skeleton doesn't align properly
+                            with your model then you must correct this inside [Setup] mode. Remember that your skeleton inside [Setup] is the starting position.</ul>
+                            
+                            <hr/>
+                            Learn more about using locators to fix common problems by scrolling down.
+                            </p> </div></div>
+                            
+                            
+                         
+                         
+                        
+                               <hr/>
+                                <div id="popcard" tabindex="0">
+                   <h4><b> How does this work?</b></h4>  [Zero > All] makes our selected objects starting position to zero.
+                   If we rotate our model notice on the right panel our rotation has increased.
+                   <img class="img-responsive" src="images/problemsolve/002.jpg" style="height:px; width:900px"/>
+                   If we type in '0' for all our transformations manually it will return to its starting position. 
+                   </div>
+                   
+                    <div id="popcard" tabindex="0">
+                   Another
+                   way to do this is to click [Reset > All].
+                   <img class="img-responsive" src="images/problemsolve/004.jpg" style="height:px; width:400px"/></div>
+                   
+                   <div id="popcard" tabindex="0">
+                                   <div class="alert alert-info" role="alert">
+                           <h4>Tip:</h4>
+                           <hr/>
+                   Do not confuse [Zero > All] for [Reset > All]. They do two different things!
+                   [Zero > All] creates a new starting position and gives our transformations a value of zero regardless of where we place objects in the 3D viewport. 
+                   [Reset > All] simply resets back to that starting position.
+                   </div></div>
+                   
+                    <div id="popcard" tabindex="0">
+                   <img class="img-responsive" src="images/problemsolve/003.jpg" style="height:px; width:900px"/>
+                   
+                   Our bones are now set to their starting positions. </p></div>
+                   
+                   <hr/>
+                   
+               <div id="popcard" tabindex="0">
+                                    <h4> <b>Locators to the Rescue</b></h4>
+                            I've tried to zero my transformations and my rig is still out of place! <h5>HELP!</h5>
+                            
+                            Locators can help us get out of a messy situation.
+                            If all else fails problem solving is what we do when things just don't work the way they should.
+                            The best thing to do in this situation is to backtrack. Open a previous saved file and try again.
+                            Sometimes you can correct the mistake previously made. If you simply cannot get your rig back in place
+                            carry on...
+                            
+                            <img class="img-responsive" src="images/problemsolve/010.jpg" style="height:px; width:900px"/>
+                            This rig has had its transformations set to zero. This means its starting position is now halfway down from the model.
+                           </div>
+                            <div id="popcard" tabindex="0">
+                            If we enter [Setup] our rig appears to be set correctly. What happened?
+                            <img class="img-responsive" src="images/problemsolve/011.jpg" style="height:px; width:900px"/>
+                            
+                            
+                            We can correct this by moving the rig upwards, however it will not be in the exact
+                            same position as the [Setup] rig. We must make sure our rig is in the exact same position as our [Setup]. Let's solve!
+                            </div>
+                            
+                             <div id="popcard" tabindex="0">
+                                <img class="img-responsive" src="images/problemsolve/012.jpg" style="height:px; width:900px"/>
+                            
+                            <li>Step 1) [Enter Setup] where the rig is in a correct position and create a locator.</li></div>
+                            
+                             <div id="popcard" tabindex="0">
+                              <li>Step 2) [Drop Action: Match Position].</li>
+                            
+                                 <img class="img-responsive" src="images/problemsolve/013.jpg" style="height:px; width:300px"/></div>
+                                 
+                                  <div id="popcard" tabindex="0">
+                                 Drag and drop the Locator over 'skeleton_root'
+                            
+                                 <img class="img-responsive" src="images/problemsolve/014.jpg" style="height:px; width:900px"/>
+                                  The Locator is now in the correct position.
+                                 We will use the Locators position to correct our skeleton outside of [Setup].</div>
+                                 
+                                 
+                                  <div id="popcard" tabindex="0">
+                                <li>Step 3) [Exit Setup] and select 'controller_skeleton_diamond'. 
+                            <img class="img-responsive" src="images/problemsolve/015.jpg" style="height:px; width:900px"/></div>
+                            
+                             <div id="popcard" tabindex="0">
+                            [Drop Action: Match Position] then drag and drop over the Locator.
+                            <img class="img-responsive" src="images/problemsolve/016.jpg" style="height:px; width:900px"/></div>
+                            
+                             <div id="popcard" tabindex="0">
+                                 <img class="img-responsive" src="images/problemsolve/zeroall2.jpg" style="height:px; width:400px"/>
+                            Finally select all your skeleton bones and [Zero > All] transformations then delete the Locator. Done!</div>
+                            
+                            
+                            <hr/>
+                            
+                    <div id="popcard" tabindex="0">
+                    <h3>2) Deleting Weights</h3> 
+                   If you need to erase your weights to bind again, simply delete the normalizing folder under the deformations tab. This will delete all your weights.
+                     <img class="img-responsive" src="images/problemsolve/005.jpg" style="height:px; width:900px"/></div>
+    
+    <div id="popcard" tabindex="0">
+            <h3>Knee Control Fix</h3> 
+        The knee control can cause trouble when it comes near the leg bone such as this issue shown below.
+           <img class="img-responsive" src="images/problemsolve/psolve_legfix_001.jpg" style="height:px; width:900px"/>
+        </div>
+    <div id="popcard" tabindex="0">
+    A quick fix is to create two locators, one named 'loc_spacer' and 'loc_spacer2'. Parent 'loc_spacer2' to 'loc_spacer'.
+         <img class="img-responsive" src="images/problemsolve/psolve_legfix_002.jpg" style="height:px; width:900px"/>
+    With match position you can place 'loc_spacer2' at the knee control and 'loc_spacer' at the leg bone.
+    <img class="img-responsive" src="images/problemsolve/psolve_legfix_004.jpg" style="height:px; width:900px"/>
+    
+    Select the knee control 'controller_L_knee' then ctrl+select 'loc_spacer2' and add a modifier [position].
+         <img class="img-responsive" src="images/problemsolve/psolve_legfix_003.jpg" style="height:px; width:900px"/>
+         </div>
+        <div id="popcard" tabindex="0">
+        Thats it! You can now move your ankle and the knee will move along in space. You can add the locators to the hidden group
+        so they don't appear in the view.
+          <img class="img-responsive" src="images/problemsolve/psolve_legfix_005.jpg" style="height:px; width:900px"/>
+    
+     </div>
+    
+      <div id="popcard" tabindex="0">
+                                   <div class="alert alert-info" role="alert">
+                            <h4>Tip:</h4>
+                         You will have to delete your normalizing folder and bind your character again if there is any strange deformation.              
+             <hr> 
+                                       Now when you move the ankle the knee will move along with it. If you move the knee back the knee will also move back in the same space.
+    Don't forget to rotate the ankle when moving the characters leg back or the knee will appear in an akward place.
+             </div></div>
+    
+    <p> </p>
+   
+    
+                                                    </p>
+                                                    
+                                                    
+                                                                                                         <div class="alert alert-success" role="alert">
+In the next lesson we will learn about the hierachy!  </div>
+
+                                                    
+                                                    
+                                                    <hr/>
+                                                    
+                                                    
+                                                           <center>
+<div class="container-fluid">
+    <div class="row">
+        
+      
+        <div class="col-md-4">      <a href="num_009.html" class="btn btn-info btn-sm"> Lesson #9</a></div>
+         <div class="col-md-4"> <a href="../index.html" class="btn btn-info btn-sm"> home</a>  </div>
+          <div class="col-md-4">   <a href="num_011.html" class="btn btn-info btn-sm"> Lesson #11</a> </div>
+
+</div>
+     </div>              
+                
+    
+    
+    </center>
+                </div>
+        </div>
+        </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+
+            
+
+
+
+
+
+	<!-- =============================================
+                        Footer
+        ============================================== -->
+         <div class="myfooter">
+			<footer>
+        <p><a href="https://yonseo.com" class="tran3s" target="_blank">yonseo.com</a></p>
+					<p>&copy; 2017-2018 All Rights Reserved</a></p>
+					<ul class="social-share">
+						
+						
+					</ul>
+				</footer>
+ </div>
+
+
+
+
+       </body></html>

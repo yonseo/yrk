@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Page title-->
+    <title page-title="">Yonseo Rigging Notes</title>
+
+    <!-- Bootstrap -->
+    <link href="../css/bootstrap.css" rel="stylesheet">
+  
+    
+        <!-- Main style sheet -->
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+
+
+
+
+
+
+
+<div class="container_thin">
+
+      
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Notebook Lesson 14
+
+
+
+            </h3>
+
+
+            
+
+          </div>
+
+          <div class="panel-body">
+          <ul>
+            <li><span class="label label-info">Yonseo Rigging Kit for Modo</span></li>
+
+            
+          </ul>
+          <ul><b>Projectfiles:</b></ul>
+      <ul> project/YON_lesson14.lxo</ul>
+      <ul>project/YON_lesson14_final.lxo</ul>
+      
+      <hr/>
+                     <h2>Inverse Kinematics Legs</h2>
+                    <p>
+
+ <hr/>
+                          
+                       <h3> Making the Leg Control using IK</h3>
+                       With inverse kinematics we are working with tools that work automatically for us. It's a similar process to creating
+                       locators and adding modifiers only here IK does the work. We simply have to assemble.
+                       
+                       <div id="popcard" tabindex="0">
+                       <p>1) First Enter [Setup] and select 3 bones in our leg. 
+                       
+                      <img class="yimg" src="images/leg/leg002.jpg" style="height:px; width:900px"/>
+                      </div>
+                    
+                            <img class="yimg" src="images/leg/leg003.jpg" style="height:px; width:300px"/>
+                            <div id="popcard" tabindex="0">
+                      Now click [apply IK] and a pop-up message will appear. This means the software has found that our leg joint rotations
+                      don't match, so the software will fix this for us! click ok.
+                                <img class="yimg" src="images/leg/leg004.jpg" style="height:px; width:700px"/>
+                      </p>  </div>
+                      
+                      <div id="popcard" tabindex="0">
+                           <img class="yimg" src="images/leg/leg005.jpg" style="height:px; width:900px"/>
+                           In our hierachy a IKGoal was created on our skeleton heel. 
+                           When we selected 3 bones and assigned the IK, the last bone selected will create a locator.
+                           This locator named 'bone_L_thigh_IKGoal' will be the ankle.
+                           </div>
+                           
+                           <div id="popcard" tabindex="0">
+                                   <div class="alert alert-info" role="alert">
+                           <h4>Tip:</h4>
+                           If we Exit [Setup] and our rig has a problem open the helpers folder included in the project file. This includes locators that have our
+                           leg position already in place.
+                           <hr/>
+                            <img class="yimg" src="images/leg/leg009.jpg" style="height:px; width:900px"/>
+                            Simply [drop action: match] the position of the 'joint_L_ankle' bone to the 'helper_L_ankle'.
+                           The leg will return to its position then with our 'joint_L_ankle' selected [zero > all] transformations.
+                          <img class="yimg" src="images/leg/legfix.gif" style="height:px; width:600px"/>
+                          <hr/>
+                              <ul>If you are rigging your own model and having problems,
+                            be sure to check lesson #10 on problem solving or click here 
+                            <a href="num_010.html" class="btn btn-info btn-sm"> Lesson #10</a></a></ul>
+                          
+                           </div>
+                             </div>
+                          
+                            <div id="popcard" tabindex="0">
+                             <img class="yimg" src="images/leg/leg006.jpg" style="height:px; width:600px"/>
+                            Exit [Setup] .We can move this 'bone_L_thigh_IKGoal' and it will move the foot.
+                        <ul>When we move the leg foward our knee bends backwards. This is great if we want to animate an
+                                 ostrich, however we don't want this kind of animation in a human character. </ul>
+                       
+                                 <img class="yimg" src="images/leg/leg001.jpg" style="height:px; width:600px"/>
+                            The solution is the knee should be ahead of the ankle to prevent collapsing. Now lets make the knee control and fix this knee problem.
+                            </div>
+                            
+                          
+                                <div id="popcard" tabindex="0">
+                              <h3>2) Knee control </h3>
+                               Enter [Setup]
+                          <img class="yimg" src="images/leg/leg006.jpg" style="height:px; width:600px"/>
+                          With our Dual Joint PlanarIK selected we can now click on [Create IK Up Vector] on the left panel.
+                          <img class="yimg" src="images/leg/leg008.jpg" style="height:px; width:300px"/> </div>
+                          
+                          <div id="popcard" tabindex="0">
+                          <ul>1) Rename the 'IK Up Vector' to 'controller_L_knee'. This will be our knee controll.
+                          </ul>
+                          <ul>2) Change the shape to a pyramid and increase its size. Now perform a [drop action: match] and drop it over the knee joint 'bone_L_knee'.
+                          </ul>
+                          <ul>3) Exit [Setup] and activate [Local] on the top right. This is important so the knee does not rotate or move when we position our knee control. 
+                          Move the knee control foward. By moving the knee controller away from the heel it will prevent our knee from moving backwards when we move our leg.
+                                 </ul>
+                                   <img class="yimg" src="images/leg/moveknee.gif" style="height:px; width:600px"/>
+                       After you position the knee [Reset > Rotation] to return the axis position. Then click [Zero > All].
+                 </div>  
+               
+               
+                <div id="popcard" tabindex="0">
+                     <h3>3) Making the foot roll </h3>
+                     Let's rename 'bone_L_thigh_IKGoal' to 'IK_L_ankle'.
+                     Now take a look at how the foot roll is created through the hierachy.
+                                 <img class="yimg" src="images/leg/leg007.jpg" style="height:px; width:900px"/>
+                                 First we have the 'controller_L_ankle' which is the box shape around the ankle. This has been positioned to match the bone 'joint_L_ankle'.
+                                 This is a child of the 'base_global'.
+                                 </div>
+                                 
+                                 
+                                 <div id="popcard" tabindex="0">
+                                      <img class="yimg" src="images/leg/leg010.jpg" style="height:px; width:900px"/>
+                                 
+                                 Create 4 locators and use a [drop action: match] to position them. Rename each locator as shown in the image.
+                                 I used the naming convention 'PIV' because this will be the pivot when we animate our foot roll.
+                                 </div>
+                                 
+                                 <div id="popcard" tabindex="0">
+                                           <img class="yimg" src="images/leg/leg011.jpg" style="height:px; width:500px"/>
+                                           Our heel pivot will be the parent. 'IK_L_ankle' will be the child at the end. Parent accordingly to the hierachy shown.
+                                           Now create another locator name it 'controller_L_ankle' and [drop action: match] to 'joint_L_ankle'.
+                                           </div>
+                                           
+                                             <div id="popcard" tabindex="0">
+    <p> </p>                                 <img class="yimg" src="images/leg/leg012.jpg" style="height:px; width:900px"/>
+                                                This box control will be a parent to all the locators we created earlier. Everything else will go below 'controller_L_ankle'.
+                                                Finally 'base_global' will be the parent to 'controller_L_ankle'.
+                                               </div>
+                                               
+                                                <div id="popcard" tabindex="0">
+                                                <b>There's one more step!</b> we need to add modifiers so the ankle can rotate and the rest will follow.
+                                                Select 'joint_L_ankle' and ctr+select 'effector_L_foot' and add modifier [Rotation].
+                                                     <img class="yimg" src="images/leg/leg020.jpg" style="height:px; width:900px"/>
+                                                </div>
+                                                
+                                                <div id="popcard" tabindex="0">
+                                                We can now test our foot roll system. Select the 'controller_L_ankle' and rotate and move.
+                                                <img class="yimg" src="images/leg/footroll.gif" style="height:px; width:700px"/>
+                                                     </div>
+                                                    <div id="popcard" tabindex="0">
+                                                    When we rotate our foot we want to do it at the pivot. Offset the heel and toe pivots and give them a 
+                                                    box shape so that we can easily select it when we need it.
+                                                    
+                                                       <img class="yimg" src="images/leg/leg013.jpg" style="height:px; width:900px"/>
+                                                        </div>
+                                                        
+                                                          <div id="popcard" tabindex="0">
+                                                      <h3>4) User Channels </h3>
+                                                    With user channels we can create our own slider to increase or decrease a value.
+                                                    This becomes useful for animation when we want a custom control such as a face rig or a foot roll.
+                                                    When our character walks we don't want to animate the bending of the heel and toe every step of the walking animation. By
+                                                    creating a custom channel we can automate this process.
+                                                    
+                                                    <h4>
+                                                    Rigging can be a visual task as well as a technical one. So were going to do this in steps.</h4></p>
+                                                     </div>
+                                                     
+                                                      <div id="popcard" tabindex="0">
+                                                    <p> 
+                                                    <h5>Step 1) Creating a User Channel</h5>
+                                                    Select the 'controller_L_ankle'.
+                                                    Create a user channel and name it 'FootRoll'</p>
+                                                              <img class="yimg" src="images/leg/leg014.jpg" style="height:px; width:900px"/>
+                                                              </div>
+                                                              
+                                                              <div id="popcard" tabindex="0">
+                                                                   <img class="img-responsive" src="images/leg/leg015.jpg" style="height:px; width:600px"/>
+                                                    Were using a
+                                                    [Type: Float] because this gives us decimal values.
+                                                    Min Value: -1
+                                                    Maximum: 1
+                                                    .Check the boxes. Click OK. </div>
+                                                    
+                                                    <div id="popcard" tabindex="0">
+                                                     <img class="yimg" src="images/leg/leg016.jpg" style="height:px; width:900px"/>
+                                                    Right click the channel we created and choose channel links.
+                                                    This opens up a Channel Links window.
+                                                    
+                                                    Click [Load Driver] on the top left, this will load our custom channel into the Channel Links window on the left side.
+                                                    Scroll to the bottom on the left panel and you will see our custom channel 'Foot Roll'. 
+                                                    
+                                                    <p><b>Load Driver is what we use 
+                                                    to control the the animation. Load Driven is what is being affected by the driver.</b></p>
+                                                    </div>
+                                                    <hr/>
+                                                    
+                                                     <div id="popcard" tabindex="0">
+                                                        <h5>Step 2) Links</h5>
+                                                       <img class="yimg" src="images/leg/uchannel.gif" style="height:px; width:900px"/>
+                                                    Now select 'controller_L_foot' and click on [Load Driven] on the top right Channel Links window.
+                                                    With 'controller_L_foot' selected press 'e' and rotate the foot. I am checking the axis that makes the foot rotate foward and
+                                                    backward. When you rotate the 'controller_L_foot' it will highlight in the Channel Links window. 
+                                                    These are the rotations we want to use. In this case it is the X axis that I want to use.
+                                                    </div>
+                                                    
+                                                    <div id="popcard" tabindex="0">
+                                                               <img class="yimg" src="images/leg/leg017.jpg" style="height:px; width:500px"/>
+                                                                Select the Foot Roll on the left window and select the Rotation X on the right. Then click [Relationship] and click [Add Link].
+                                                                What this does is connect the FootRoll user channel we just created to the Rotation X of the joint 'controller_L_foot'.
+                                                                Now when we use the FootRoll channel it will affect the 'controller_L_foot' Rotation X.
+                                                                
+                                                                <p><b>What's the difference between Direct Link and Relationship?</b></p>
+                                                                Direct Link will match both values meaning when we rotate the 'controller_L_ankle' it will also affect the 'controller_L_foot'.
+                                                                However the foot controller can only rotate until it reaches a stopping point.
+                                                                
+                                                                 <p>Relationship will allow us to continue this rotation and gives us more felxibility. So for that reason we use Relationship. </p>
+                                                                </div>
+                                                                
+                                                                <div id="popcard" tabindex="0">
+                                                                <h5>Step 3) Channel Haul</h5>
+                                                                        <img class="yimg" src="images/leg/leg018.jpg" style="height:px; width:900px"/>
+                                                               
+                                                                Toggle the [Channel Haul] button or click it twice. A window will appear.
+                                                                Change your Driver FootRoll to 0.5.
+                                                                Notice that nothing has happened to our foot. That's because we need to tell MODO what to do with this foot control when it is
+                                                                at 0.5
+                                                                
+                                                                <p>To do this we use Save States. Save States are like pressing pause on a film.
+                                                                The saved state acts like a bookmark and you can return to that state at any time.</p>
+                                                                 </div>
+                                                                
+                                                                  <div id="popcard" tabindex="0">
+                                                                Now change your Driven Rotation X to 50. Our ankle will move upwards.
+                                                                 
+                                                                <img class="yimg" src="images/leg/leg019.jpg" style="height:px; width:900px"/>
+                                                                What this will do is rotate our foot roll when we are at 0.5 on the Driver FootRoll. Anything past 0.5 and before 0.0 nothing will happen 
+                                                                because we have not saved any states for them.
+                                                                
+                                                                Click on the yellow square to save the state and test it by dragging the small square left and right on the Driver FootRoll.
+                                                                
+                                                                
+                                                                Click on the red 'X' to delete states.
+                                                                
+                                                                When done return the FootRoll back to Zero.
+                                                                
+                                                                Now we can connect other controls in the Driven so we can add a different type of animation to our Driver FootRoll.
+                                                                 </div>
+                                                                 
+                                                                 
+                                                                 <div id="popcard" tabindex="0">
+                                                                 <h3>5) IK for the right leg!</h3>
+                                                                 Making IK for the right leg is the same process. Use what you learned and practice.
+                                                                 Remember to use the naming convention '_R_'.
+                                                                  </div>
+                                                                <hr/>
+                                                    </p>
+                                                    <div class="alert alert-success" role="alert">
+                                                    In the next lesson I will cover arm and hand controls.
+                                                    
+                                                    </div>
+                                                    
+                                                    
+                                                                  <center>
+<div class="container-fluid">
+    <div class="row">
+        
+      
+        <div class="col-md-4">      <a href="num_013.html" class="btn btn-info btn-sm"> Lesson #13</a></div>
+         <div class="col-md-4"> <a href="../index.html" class="btn btn-info btn-sm"> home</a>  </div>
+          <div class="col-md-4">   <a href="num_015.html" class="btn btn-info btn-sm"> Lesson #15</a> </div>
+
+
+     </div>              
+                
+    
+    
+    </center>
+                                                    
+                </div>
+        </div>
+        </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+</body>
+
+
+            
+
+
+
+
+
+	<!-- =============================================
+                        Footer
+        ============================================== -->
+         <div class="myfooter">
+			<footer>
+        <p><a href="https://yonseo.com" class="tran3s" target="_blank">yonseo.com</a></p>
+					<p>&copy; 2017-2018 All Rights Reserved</a></p>
+					<ul class="social-share">
+						
+						
+					</ul>
+				</footer> </div>
+
+
+
+
+
+
+
+       </body></html>

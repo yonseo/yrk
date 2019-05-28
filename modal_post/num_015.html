@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Page title-->
+    <title page-title="">Yonseo Rigging Notes</title>
+
+    <!-- Bootstrap -->
+    <link href="../css/bootstrap.css" rel="stylesheet">
+  
+    
+        <!-- Main style sheet -->
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+
+
+
+
+
+
+
+<div class="container_thin">
+
+      
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Notebook Lesson 15
+
+
+
+            </h3>
+
+
+            
+
+          </div>
+
+          <div class="panel-body">
+          <ul>
+            <li><span class="label label-info">Yonseo Rigging Kit for Modo</span></li>
+
+            
+          </ul>
+      <ul><b>Projectfiles:</b></ul> 
+      <ul>project/YON_lesson15.lxo</ul>
+     <ul>project/YON_lesson15_final.lxo</ul>
+      <hr/>
+                     <h2>Arm and Hand Controls</h2>
+                    <p>
+
+ 
+<div class="alert alert-dark" role="alert">
+ Creating the arm controls is a similar process to creating the legs.
+      We wont have to create a footroll system so it will be easier.
+      Let's start on your first project. 
+      <h4>Use what you've learned and practice on this project.</h4>
+      <p>I will guide you through the process.</p></div>
+ 
+  <div id="popcard" tabindex="0">
+      
+       <div class="alert alert-warning" role="alert">
+           <h3>Mini Project</h3>
+            <hr/>
+      <h4>The Clavicle</h4>
+      Let's focus on the left arm.
+        <img class="yimg" src="images/acon/ac001.jpg" style="height:px; width:900px" />
+        <h5>Making clavicle controls</h5>
+     <ul> <b>1)</b> I've created 2 locators, one with a default shape and another with a box shape. 
+      I made the box into a rectangle and used a [Drop Action: Match] to match both locators to 'bone_L_ClavicleIN'.</ul>
+      
+      <ul><b>2</b>) I renamed my rectangle locator to 'controller_L_clavicle' and my default locator to 'effector_L_clavicle'. 
+      I have offset the rectangle so it is easy to select.</ul>
+      
+      <ul><b>3)</b> [Enter Setup], now select 'bone_L_ClavicleIN' and ctrl+select 'effector_L_clavicle'. Assign a modifier 'Rotation'.</ul>
+        
+         <ul><b>4)</b> [Exit Setup] and test 'effector_L_clavicle' by rotating it. 
+         Everything should work, now [Enter Setup] and parent the 'controller_L_clavicle' to the 'effector_L_clavicle'.</ul>
+        
+        <ul><b>5)</b> Parent 'controller_L_clavicle' to 'controller_chest'.</ul>
+        
+        <ul><b>6)</b> Finally [Zero > All] the 'controller_L_clavicle'.</ul>
+        Done!
+        </div>
+        </div>
+           
+        
+        <div id="popcard" tabindex="0">
+            <h4>The Arm</h4>
+            <img class="yimg" src="images/acon/ac002.jpg" style="height:px; width:900px" />
+            <ul><b>1)</b> [Enter Setup] Select 3 bones starting at the shoulder and ending at the wrist.</ul>
+            <ul><b>2)</b> Inverse Kinematics tab and click [Apply IK]. </ul>
+            </div>
+            
+             <div id="popcard" tabindex="0">
+              <img class="yimg" src="images/acon/ac003.jpg" style="height:px; width:900px" />
+              <ul><b>3)</b>  Rename the IKGoal on the wrist to 'controller_L_arm'. Give it a custom chape and offset it. I used a pyramid shape. </ul>
+                          <img class="yimg" src="images/acon/ac004.jpg" style="height:px; width:200px" />
+            <ul><b>4)</b> Select the 'Dual Joint Planar IK' and assign a [Create IK Up Vector]. Rename the 'IK Up Vector' to 'controller_L_elbow'. 
+              [Drop Action: Match] to 'bone_L_elbow'.</ul>
+              <img class="yimg" src="images/acon/ac005.jpg" style="height:px; width:300px" />
+                  <ul><b>5)</b> Change the elbow controll shape to box. Remember to translate the elbow using the gizmo by activating [Local] and [Exit Setup].
+                  Once its been positioned [Reset > Rotation]. Then [Zero > All]. </ul>
+                  <ul><b>5)</b> [Enter Setup] Parent 'control_L_arm' to 'base_global'.</ul>
+                  Done!
+              
+            </div>
+            
+             <h3>Finger Controls</h3>
+                <div id="popcard" tabindex="0">
+                    <h4>The wrist Constraints</h4>
+            <ul><b>1)</b> Create 2 locators and [Drop Action: Match] them to 'joint_L_wrist' and 'joint_R_wrist'. Rename each locator to 'effector_L_wrist' 
+            'effector_R_wrist'.</ul>
+            
+            <ul><b>2)</b>Select the 'joint_L_wrist' and ctrl+select the 'effector_L_wrist' then assign a modifier 'Rotation'. </ul>
+              <img class="yimg" src="images/acon/ac006.jpg" style="height:px; width:300px" />
+            <ul><b>3)</b>  Parent the 'effector_L_wrist' to the 'controller_L_arm'. </ul>
+            <img class="yimg" src="images/acon/ac007.jpg" style="height:px; width:300px" />
+            <ul><b>3)</b>  Repeat for the right side. Add a modifier and parent to the controller. </ul>
+            Done!
+            </div>
+                      
+     <hr/>
+            
+        <div id="popcard" tabindex="0">
+            
+            <h4>Finger Controls</h4>
+                 <img class="yimg" src="images/acon/ac008_b.jpg" style="height:px; width:900px" />
+            <ul><b>1)</b>  Create a locator, [Drop Action: Match] to the index finger bone. Rename it to 'controller_L_index'. </ul>
+         
+                   </div>
+                  <div id="popcard" tabindex="0">
+            <ul><b>2)</b> Duplicate 5 times for the other fingers and use a [Drop Action: Match] to position them. </ul>
+            <img class="yimg" src="images/acon/ac010.jpg" style="height:px; width:900px" />
+            <ul><b>3)</b>  Rename the controls we made to 'controller_L_****' and replace **** with the name of the finger. </ul>
+              <img class="yimg" src="images/acon/ac011.jpg" style="height:px; width:300px" />
+            </div>
+        <div id="popcard" tabindex="0">
+            <img class="yimg" src="images/acon/ac012.jpg" style="height:px; width:900px" />
+            <ul><b>4)</b> [Enter Setup] Parent the finger controls to the arm control. With only the finger controls selected [Zero > All] . </ul>
+             
+            
+            </div>
+            
+        <div id="popcard" tabindex="0">
+             <img class="yimg" src="images/acon/ac013.jpg" style="height:px; width:900px" />
+            <ul><b>5)</b> [Exit Setup] and test the 'controller_L_arm' movement. It works when we move the controller only we have this
+            weird seperation between the controller and the hand. To fix this we need a constraint on the finger controls we created.  </ul>
+             </div>
+            
+                    <div id="popcard" tabindex="0">
+                        When adding modifiers we usually select the bone/joint first and the locator last then add a modifier. This time I will select the locator first and
+            the bone last then add a modifier.
+                    <img class="yimg" src="images/acon/ac014.jpg" style="height:px; width:900px" />
+            <ul><b>6)</b>   [Enter Setup] Go ahead and select the 'bone_L_thumbA' and ctrl+select the 'controller_L_thumb' then add a modifier [Position].
+            Do this for each finger control and assign a modifier [Position] to their respective finger bones. This will make the finger controls follow the bone instead of seperating.  </ul>
+            
+            <ul><b>7)</b>  Repeat step 6, this time selecting the joint first and ctrl+selecting the finger control last. Use the modifier [Rotation]. </ul>
+              </div>
+            
+            <div id="popcard" tabindex="0">
+            <img class="yimg" src="images/acon/thumbr.gif" style="height:px; width:900px" />
+            <ul><b>9)</b>  [Exit Setup] Test the finger control rotation. </ul>
+            </div>
+            
+            <div id="popcard" tabindex="0">
+            <ul><b>10)</b> Do this for the rest of the knuckles. The process is the same. Take this time to practice.
+            Remember we don't need controls for the end joints. Add any new controls to the control group and [zero > all] transformations. </ul>
+               </div>
+            <hr/>
+            
+           
+                                                    
+                                                    </p>
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    <div class="alert alert-success" role="alert">
+                                                    Congratulations! You've reached the end of the lesson. Go practice your skills and make better rigs!
+                                                    
+                                                    <a href="../index.html" class="btn btn-info btn-sm"> home</a>
+                                                    
+                                                     <a href="num_note.html" class="btn btn-info btn-sm"> Authors Note</a>
+
+                                                    </div>
+                                                    
+                </div>
+        </div>
+        </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+</body>
+
+
+            
+
+
+
+
+
+	<!-- =============================================
+                        Footer
+        ============================================== -->
+         <div class="myfooter">
+			<footer>
+        <p><a href="https://yonseo.com" class="tran3s" target="_blank">yonseo.com</a></p>
+					<p>&copy; 2017-2018 All Rights Reserved</a></p>
+					<ul class="social-share">
+						
+						
+					</ul>
+				</footer></div>
+
+
+
+
+
+
+
+       </body></html>

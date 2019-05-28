@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Page title  -->
+    <title page-title="">Yonse Rigging Kit</title>
+
+    <!-- Bootstrap -->
+    <link href="../css/bootstrap.css" rel="stylesheet">
+  
+
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+
+    
+
+ 
+
+
+
+
+
+
+
+<div class="container_thin">
+
+      
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Notebook Lesson 4
+
+
+
+            </h3>
+
+
+
+          </div>
+
+          <div class="panel-body">
+          <ul>
+            <li><span class="label label-info">Yonseo Rigging Kit for Modo</span></li>
+
+            
+          </ul>
+              Projectfiles: project/lesson4/YON_lesson4.lxo 
+                                                  
+                    
+                    
+              
+                    <hr/>
+                     <h3>1) Mirror Hierachy X and Parent</h3>
+In this lesson we will create the right side of the arm and leg then rename our bones.
+    <div id="popcard" tabindex="0">
+
+        <div class="alert alert-info" role="alert">
+<h3>Tip:</h3>
+<hr/>
+It is best to mirror first and parent afterwards to avoid problems in our skeleton.
+<ul>You can [mirror x] after parenting but mirroring our hierachy BEFORE parenting helps to avoid one more problem solving step in our rig.</ul></div>
+</div>
+
+    <div id="popcard" tabindex="0">
+Let's begin by mirroring the left leg skeleton. With the leg bone selected click [Mirror X].
+<img class="img-responsive" src="images/mirror/m_008.jpg" style="height:px; width:900px" /></div>
+
+    <div id="popcard" tabindex="0">
+Now create a bone to parent the skeleton legs. This will be our pelvis.
+<img class="img-responsive" src="images/mirror/m_002.jpg" style="height:px; width:900px" /></div>
+
+    <div id="popcard" tabindex="0">
+Select the end joint of the spine and right click and select duplicate.
+<img class="img-responsive" src="images/mirror/m_003.jpg" style="height:px; width:400px" /></div>
+    <div id="popcard" tabindex="0">
+Move the joint down, then with the joint selected ctrl+select the end of the spine joint and parent.
+<img class="img-responsive" src="images/mirror/m_004.jpg" style="height:px; width:900px" />
+This will create a bone for the pelvis. Rename the top joint to 'bone_pelvis' and the lower joint to 'end_pelvis'. </div>
+
+    <div id="popcard" tabindex="0">
+<img class="img-responsive" src="images/mirror/m_009.jpg" style="height:px; width:600px" />
+With the pelvis bone selected we can increase the radius under properties tab. This will make it easier to select because both the spine and the pelvis joint
+share the same space.</div>
+
+    <div id="popcard" tabindex="0">
+We can now connect the leg bones to this pelvis bone by parenting.
+
+<img class="img-responsive" src="images/mirror/m_007.jpg" style="height:px; width:900px" />
+First select both leg bones then ctrl+select the 'bone_pelvis' joint. Then press 'p' to parent.
+
+<img class="img-responsive" src="images/mirror/m_006.jpg" style="height:px; width:900px" />
+
+After parenting a line will appear showing us the connection. The connecting lines mean that the leg bones are a child to the pelvis bone. </div>
+
+<div id="popcard" tabindex="0">
+ It's that easy! Now lets try it on the arm.
+
+Select the clavicle bone and [Mirro X]. Then select both clavicles and lastly ctr+select the chest bone then press 'p' to parent.
+<img class="img-responsive" src="images/mirror/m_005.jpg" style="height:px; width:900px" />
+</div>
+
+<div id="popcard" tabindex="0">
+<h4>Last Steps</h4>
+<ul>
+<b>1)</b> Rename the right side of the bones and use the name convention '_R_'.</ul>
+<ul><b>2)</b> Select all the bones and [Zero > All].</ul>
+
+
+
+</div>
+
+  <div class="alert alert-success" role="alert">
+In the next lesson we will learn about binding!  <a href="num_005.html" class="btn btn-info btn-sm"> Lesson #5</a> </div>
+
+
+
+                 </div>
+        </div>
+        </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+
+            
+
+
+
+
+
+	<!-- =============================================
+                            Footer
+            ============================================== -->
+             <div class="myfooter">
+            
+				<footer>
+        <p><a href="https://yonseo.com" class="tran3s" target="_blank">yonseo.com</a></p>
+					<p>&copy; 2017-2018 All Rights Reserved</a></p>
+					<ul class="social-share">
+						
+						
+					</ul>
+				</footer>
+
+</div>
+
+
+
+
+
+
+
+       </body></html>

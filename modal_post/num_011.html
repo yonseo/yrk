@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Page title -->
+    <title page-title="">Yonseo Rigging Kit</title>
+
+    <!-- Bootstrap -->
+    <link href="../css/bootstrap.css" rel="stylesheet">
+  
+    
+        <!-- Main style sheet -->
+		<link rel="stylesheet" type="text/css" href="../css/style.css">
+	
+
+
+
+
+<div class="container_thin">
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Notebook Lesson 11
+
+
+
+            </h3>
+
+
+              
+
+          </div>
+
+          <div class="panel-body">
+          <ul>
+            <li><span class="label label-info">Yonseo Rigging Kit for Modo</span></li>
+
+            
+          </ul>
+            
+                      <div id="popcard" tabindex="0">                                 
+                     <h3>1) Control Hierachy</h3>
+                     We need to look at the hierachy to understand how to organize our rig objects.
+                    <p><img class="img-responsive" src="images/hierachy/001.jpg" style="height:px; width:700px"/>
+                    The base_global controls our entire rig. Underneath we have a child named 'controller_skeleton_diamond' that controls
+                    the movement and rotation of our entire skeleton. The next child is 'controller_pelvis' this controls movement and rotation of our pelvis.
+                      </div>
+                   
+                   <div id="popcard" tabindex="0">    
+                    There are several childs in here that include 'controller_spine_a' and 'skeleton_root'.
+                    
+                   
+                    <li>'controller_spine_a' is a parent to 'controller_spine_b' and 'controller_chest'.</li>
+                    <img class="img-responsive" src="images/hierachy/003.jpg" style="height:px; width:200px"/>
+                      Each control is a parent to an effector.
+                      
+                    <li>'skeleton_root' is our entire skeleton.</li>
+                    
+                    
+                  
+                    <img class="img-responsive" src="images/hierachy/002.jpg" style="height:px; width:900px"/>
+                       </div>
+                       
+                       
+                    <hr/>
+                     <div id="popcard" tabindex="0">    
+                    <h3>2) Skeleton Hierachy</h3>
+                   Lets take a look at the skeleton_root hierachy.
+                  
+                   <img class="img-responsive" src="images/hierachy/004.jpg" style="height:px; width:400px"/>
+                    </div>
+                   
+                   
+                     <div id="popcard" tabindex="0">    
+                   I've named my clavicle bone 'bone_L_ClavicleIN' and 'bone_L_ClavicleOUT' to organize the joints on the clavicle. The 'bone_L' lets
+                   me know what side of the rig this bone is located.
+                   
+                   
+                    <img class="img-responsive" src="images/hierachy/005.jpg" style="height:px; width:900px"/>
+                     <img class="img-responsive" src="images/hierachy/006.jpg" style="height:px; width:900px"/>
+                     You can also use '_a' , '_b' , '_c' naming conventions instead of 'OUT' and 'IN' if you have more than one bone connection such as the hand.
+                    <img class="img-responsive" src="images/hierachy/007.jpg" style="height:px; width:400px"/>
+                        </div>
+                        
+                    <div id="popcard" tabindex="0">   
+                    I named my wrist joint to 'joint_L_wrist' instead of 'bone_L_wrist' to let me know there is rotation and movement here.
+                    It is ok to name it either way. Find a naming convention that is useful to you.
+                    <img class="img-responsive" src="images/hierachy/008.jpg" style="height:px; width:900px"/>
+                        </div>
+                    
+                    <div id="popcard" tabindex="0">   
+                    <h4>The Hand Hierachy</h4>
+                    The hand contains 5 finger skeletons. Each finger contains 4 bones and 5 joints. 
+                    I used the 'A','B','C' naming convention.
+                    The end joint is named 'end_' to let me know it is the end
+                    of the finger. Let's look at the index finger.
+                               <img class="img-responsive" src="images/hierachy/009.jpg" style="height:px; width:400px"/>
+                               All 5 fingers are childs of 'joint_L_wrist'.     </div>
+                    As we work on our rig we will add more controllers and effectors. It's important to stay organized and learn how things
+                    work in the hierachy.
+                    <hr/>
+    
+                                                    </p>
+                                                    
+                                                    
+                                                    
+                                                                                                                                        <div class="alert alert-success" role="alert">
+In the next lesson we will learn about the head control!  </div>
+
+                                                    
+                                                    
+                                                    <hr/>
+                                                    
+                                                    
+                                                           <center>
+<div class="container-fluid">
+    <div class="row">
+        
+      
+        <div class="col-md-4">      <a href="num_010.html" class="btn btn-info btn-sm"> Lesson #10</a></div>
+         <div class="col-md-4"> <a href="../index.html" class="btn btn-info btn-sm"> home</a>  </div>
+          <div class="col-md-4">   <a href="num_012.html" class="btn btn-info btn-sm"> Lesson #12</a> </div>
+
+</div>
+     </div>              
+                
+    
+    
+    </center>
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                </div>
+        </div>
+        </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+
+            
+
+
+
+
+
+	<!-- =============================================
+		          Footer
+	============================================== -->
+         <div class="myfooter">
+				<footer>
+        <p><a href="https://yonseo.com" class="tran3s" target="_blank">yonseo.com</a></p>
+					<p>&copy; 2017-2018 All Rights Reserved</a></p>
+					<ul class="social-share">
+						
+						
+					</ul>
+				</footer>
+
+ </div>
+
+
+
+
+
+
+
+       </body></html>
